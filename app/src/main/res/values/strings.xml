@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Demo Dialog</string>
     <string name="demo_1_simple_dialog">Demo 1 - simple dialog</string>
+    <string name="demo_2_buttons_dialog">Demo 2 Buttons dialog</string>
 </resources>
