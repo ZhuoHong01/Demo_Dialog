@@ -69,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+                //Configure the 'positive' button
+                myBuilder.setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tvDemo2.setText("You have selected negative");
+                    }
+                });
+
                 //Configure the neutral button
                 myBuilder.setNeutralButton("Cancel", null);
                 AlertDialog myDialog = myBuilder.create();
