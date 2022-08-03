@@ -3,15 +3,18 @@ package sg.edu.rp.c346.id21018193.demodialog;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnDemo1, btnDemo2;
-    TextView tvDemo2;
+    Button btnDemo1, btnDemo2, btnDemo3;
+    TextView tvDemo2, tvDemo3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnDemo1 = findViewById(R.id.buttonDemo1);
         btnDemo2 = findViewById(R.id.buttonDemo2);
+        btnDemo3 = findViewById(R.id.buttonDemo3);
         tvDemo2 = findViewById(R.id.textViewDemo2);
+        tvDemo3 = findViewById(R.id.textViewDemo3);
 
         btnDemo1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +84,37 @@ public class MainActivity extends AppCompatActivity {
 
                 //Configure the neutral button
                 myBuilder.setNeutralButton("Cancel", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
+            }
+        });
+
+        btnDemo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Inflate the input.xml layout file
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View viewDialog = inflater.inflate(R.layout.input, null);
+
+                //Obtain the UI component in the input.xml layout
+                //define as final, so it can be used in the onCLick() method later
+                final EditText etInput = viewDialog.findViewById(R.id.editTextInput);
+                //Create the Dialog Builder
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(MainActivity.this);
+                //Set the view of the dialog
+                myBuilder.setView(viewDialog);
+                //Set the Dialog details
+                myBuilder.setTitle("Demo 3 - Text input dialog");
+                myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Extract the text entered by the user
+                        String message = etInput.getText().toString();
+                        //Set the text to the TextView
+                        tvDemo3.setText(message);
+                    }
+                });
+                myBuilder.setNegativeButton("CANCEL", null);
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
             }
