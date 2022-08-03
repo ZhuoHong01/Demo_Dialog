@@ -3,4 +3,5 @@
     <string name="demo_1_simple_dialog">Demo 1 - simple dialog</string>
     <string name="demo_2_buttons_dialog">Demo 2 Buttons dialog</string>
     <string name="d3">Demo 3 Text Input Dialog</string>
+    <string name="exercise_3">Exercise 3</string>
 </resources>

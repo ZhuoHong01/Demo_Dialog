@@ -13,8 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnDemo1, btnDemo2, btnDemo3;
-    TextView tvDemo2, tvDemo3;
+    Button btnDemo1, btnDemo2, btnDemo3, btnExercise3;
+    TextView tvDemo2, tvDemo3, tvExercise3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         btnDemo1 = findViewById(R.id.buttonDemo1);
         btnDemo2 = findViewById(R.id.buttonDemo2);
         btnDemo3 = findViewById(R.id.buttonDemo3);
+        btnExercise3 = findViewById(R.id.buttonExercise3);
         tvDemo2 = findViewById(R.id.textViewDemo2);
         tvDemo3 = findViewById(R.id.textViewDemo3);
+        tvExercise3 = findViewById(R.id.textViewExercise3);
 
         btnDemo1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +114,38 @@ public class MainActivity extends AppCompatActivity {
                         String message = etInput.getText().toString();
                         //Set the text to the TextView
                         tvDemo3.setText(message);
+                    }
+                });
+                myBuilder.setNegativeButton("CANCEL", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
+            }
+        });
+
+        btnExercise3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Inflate the input.xml layout file
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View viewDialog = inflater.inflate(R.layout.input2, null);
+
+                //Obtain the UI component in the input.xml layout
+                //define as final, so it can be used in the onCLick() method later
+                final EditText etValue1 = viewDialog.findViewById(R.id.editTextValue1);
+                final EditText etValue2 = viewDialog.findViewById(R.id.editTextValue2);
+                //Create the Dialog Builder
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(MainActivity.this);
+                //Set the view of the dialog
+                myBuilder.setView(viewDialog);
+                //Set the Dialog details
+                myBuilder.setTitle("Demo 3 - Text input dialog");
+                myBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Extract the text entered by the user
+                        int message = Integer.parseInt(etValue1.getText().toString() + etValue2.getText().toString());
+                        //Set the text to the TextView
+                        tvExercise3.setText(message);
                     }
                 });
                 myBuilder.setNegativeButton("CANCEL", null);
