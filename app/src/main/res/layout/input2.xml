@@ -10,7 +10,7 @@
         android:id="@+id/textViewValue1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Some Text"
+        android:text="Enter a value"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -25,7 +25,7 @@
         android:id="@+id/textViewValue2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Some Text"
+        android:text="Enter another value"
         tools:ignore="TextContrastCheck" />
 
     <EditText
