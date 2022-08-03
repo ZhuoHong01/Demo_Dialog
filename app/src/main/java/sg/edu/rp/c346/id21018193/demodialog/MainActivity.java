@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 myBuilder.setCancelable(false);
 
                 //Configure the 'positive' button
-                myBuilder.setPositiveButton("Positive", new DialogInterface.OnClickListener() {
+                myBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         tvDemo2.setText("You have selected positive");
                     }
                 });
 
-                //Configure the 'positive' button
-                myBuilder.setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+                //Configure the 'negative' button
+                myBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         tvDemo2.setText("You have selected negative");
