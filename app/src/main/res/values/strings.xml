@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Demo Dialog</string>
+    <string name="demo_1_simple_dialog">Demo 1 - simple dialog</string>
 </resources>

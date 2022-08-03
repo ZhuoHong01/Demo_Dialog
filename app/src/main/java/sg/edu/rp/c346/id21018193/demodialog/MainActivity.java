@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
                 myBuilder.setTitle("Congratulations");
                 myBuilder.setMessage("You have completed a simple Dialog Box");
-                myBuilder.setCancelable(false);
+                myBuilder.setCancelable(true);
                 myBuilder.setPositiveButton("Dismiss", null);
 
                 AlertDialog myDialog = myBuilder.create();
