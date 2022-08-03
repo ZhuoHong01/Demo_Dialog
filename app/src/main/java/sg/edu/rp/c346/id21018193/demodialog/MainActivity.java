@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
     Button btnDemo1, btnDemo2, btnDemo3, btnExercise3, btnDemo4;
     TextView tvDemo2, tvDemo3, tvExercise3, tvDemo4;
@@ -168,7 +170,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                DatePickerDialog myDateDialog = new DatePickerDialog(MainActivity.this, myDateListener, 2014, 11, 31);
+                Calendar now = Calendar.getInstance();
+                int year = now.get(Calendar.YEAR);
+                int month = now.get(Calendar.MONTH);
+                int day = now.get(Calendar.DAY_OF_MONTH);
+
+
+                DatePickerDialog myDateDialog = new DatePickerDialog(MainActivity.this, myDateListener, year, month, day);
                 myDateDialog.show();
             }
         });
