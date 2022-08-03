@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                TimePickerDialog myTimeDialog = new TimePickerDialog(MainActivity.this, myTimeListener, 20, 00, true);
+                TimePickerDialog myTimeDialog = new TimePickerDialog(MainActivity.this, myTimeListener, 20, 00, false);
                 myTimeDialog.show();
             }
         });
