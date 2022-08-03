@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -13,12 +14,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnDemo1, btnDemo2, btnDemo3, btnExercise3, btnDemo4;
-    TextView tvDemo2, tvDemo3, tvExercise3, tvDemo4;
+    Button btnDemo1, btnDemo2, btnDemo3, btnExercise3, btnDemo4, btnDemo5;
+    TextView tvDemo2, tvDemo3, tvExercise3, tvDemo4, tvDemo5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
         btnDemo2 = findViewById(R.id.buttonDemo2);
         btnDemo3 = findViewById(R.id.buttonDemo3);
         btnDemo4 = findViewById(R.id.buttonDemo4);
+        btnDemo5 = findViewById(R.id.buttonDemo5);
         btnExercise3 = findViewById(R.id.buttonExercise3);
         tvDemo2 = findViewById(R.id.textViewDemo2);
         tvDemo3 = findViewById(R.id.textViewDemo3);
         tvDemo4 = findViewById(R.id.textViewDemo4);
+        tvDemo5 = findViewById(R.id.textViewDemo5);
         tvExercise3 = findViewById(R.id.textViewExercise3);
 
         btnDemo1.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +182,21 @@ public class MainActivity extends AppCompatActivity {
 
                 DatePickerDialog myDateDialog = new DatePickerDialog(MainActivity.this, myDateListener, year, month, day);
                 myDateDialog.show();
+            }
+        });
+
+        btnDemo5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerDialog.OnTimeSetListener myTimeListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        tvDemo5.setText("Time: " + hourOfDay + ":" + minute);
+                    }
+                };
+
+                TimePickerDialog myTimeDialog = new TimePickerDialog(MainActivity.this, myTimeListener, 20, 00, true);
+                myTimeDialog.show();
             }
         });
     }
