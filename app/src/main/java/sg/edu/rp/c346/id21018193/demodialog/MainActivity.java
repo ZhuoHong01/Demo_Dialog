@@ -25,10 +25,20 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(MainActivity.this);
 
                 //Set the Dialog details
-                myBuilder.setTitle("Demo 1 - Simple Dialog");
+                /*
+               myBuilder.setTitle("Demo 1 - Simple Dialog");
                 myBuilder.setMessage("I can develop Android App");
                 myBuilder.setCancelable(false);
                 myBuilder.setPositiveButton("Close", null);
+
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
+                */
+
+                myBuilder.setTitle("Congratulations");
+                myBuilder.setMessage("You have completed a simple Dialog Box");
+                myBuilder.setCancelable(false);
+                myBuilder.setPositiveButton("Dismiss", null);
 
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
